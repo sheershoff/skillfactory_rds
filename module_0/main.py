@@ -1,7 +1,8 @@
 import numpy as np
 
-number = np.random.randint(1,101)    # загадали число
-print ("Загадано число от 1 до 100")
+number = np.random.randint(1, 101)  # загадали число
+print("Загадано число от 1 до 100")
+
 
 def game_core_v1(number):
     '''Просто угадываем на random, никак не используя информацию о больше или меньше.
@@ -18,14 +19,15 @@ def game_core_v2(number):
     '''Сначала устанавливаем любое random число, а потом уменьшаем или увеличиваем его в зависимости от того, больше оно или меньше нужного.
        Функция принимает загаданное число и возвращает число попыток'''
     count = 1
-    predict = np.random.randint(1,101)
+    predict = np.random.randint(1, 101)
     while number != predict:
-        count+=1
+        count += 1
         if number > predict:
             predict += 1
         elif number < predict:
             predict -= 1
-    return(count) # выход из цикла, если угадали
+    return (count)  # выход из цикла, если угадали
+
 
 def score_game(game_core):
     '''Запускаем игру 1000 раз, чтобы узнать, как быстро игра угадывает число'''
